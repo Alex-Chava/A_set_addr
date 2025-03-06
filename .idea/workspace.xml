@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55cfbe-6d7c-4231-898c-dd1ae08f03f6" name="Changes" comment="Старт" />
+    <list default="true" id="7b55cfbe-6d7c-4231-898c-dd1ae08f03f6" name="Changes" comment="Старт">
+      <change beforePath="$PROJECT_DIR$/.idea/A_set_addr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/A_set_addr.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a_set_addr.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_set_addr.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +31,12 @@
     &quot;assignee&quot;: &quot;Alex-Chava&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Alex-Chava/A_set_addr.git&quot;,
-    &quot;accountId&quot;: &quot;72d37823-f950-4754-b1c4-ecf4d0904442&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Alex-Chava/A_set_addr.git",
+    "accountId": "be4a540d-0f69-49ac-b256-7439fc14bc99"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>

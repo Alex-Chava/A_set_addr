@@ -24,7 +24,7 @@ class ModbusClientWrapper:
     def find_devices(self):
         """Поиск всех устройств на шине Modbus."""
         devices = []
-        for slave_id in range(1, 248):  # Адреса устройств от 1 до 247
+        for slave_id in range(1, 20):  # Адреса устройств от 1 до 247
             try:
                 # Попытка чтения holding регистра для проверки наличия устройства
                 response = self.client.read_holding_registers(address=0, count=1, slave=slave_id)
