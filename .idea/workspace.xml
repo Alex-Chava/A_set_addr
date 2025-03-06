@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55cfbe-6d7c-4231-898c-dd1ae08f03f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/A_set_addr.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a_set_addr.py" afterDir="false" />
+    <list default="true" id="7b55cfbe-6d7c-4231-898c-dd1ae08f03f6" name="Changes" comment="Старт">
+      <change beforePath="$PROJECT_DIR$/a_set_addr.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_set_addr.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +22,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Alex-Chava/A_set_addr.git",
+    "accountId": "72d37823-f950-4754-b1c4-ecf4d0904442"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -43,7 +44,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -62,6 +63,27 @@
       <option name="presentableId" value="Default" />
       <updated>1741262513658</updated>
     </task>
+    <task id="LOCAL-00001" summary="Старт">
+      <option name="closed" value="true" />
+      <created>1741270555546</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741270555546</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Старт">
+      <option name="closed" value="true" />
+      <created>1741270845277</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741270845277</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Старт" />
+    <option name="LAST_COMMIT_MESSAGE" value="Старт" />
   </component>
 </project>

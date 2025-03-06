@@ -44,7 +44,7 @@ class ModbusClientWrapper:
         return True
 
 
-# Основной код программы
+# Основной код программы надо проверить на УЬ
 if __name__ == "__main__":
     # Инициализация Modbus-клиента
     modbus_client = ModbusClientWrapper(port='COM10',
