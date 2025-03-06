@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55cfbe-6d7c-4231-898c-dd1ae08f03f6" name="Changes" comment="Старт">
-      <change beforePath="$PROJECT_DIR$/a_set_addr.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_set_addr.py" afterDir="false" />
-    </list>
+    <list default="true" id="7b55cfbe-6d7c-4231-898c-dd1ae08f03f6" name="Changes" comment="Старт" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +20,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Alex-Chava"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Alex-Chava/A_set_addr.git",
@@ -79,7 +83,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741270845277</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Старт">
+      <option name="closed" value="true" />
+      <created>1741270910608</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741270910608</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Старт">
+      <option name="closed" value="true" />
+      <created>1741271266768</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741271266768</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
