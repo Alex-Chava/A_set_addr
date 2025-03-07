@@ -1,5 +1,6 @@
 from pymodbus.client import ModbusSerialClient
 from pymodbus.exceptions import ModbusIOException
+from pymodbus.pdu import ExceptionResponse
 
 
 class ModbusClientWrapper:
@@ -15,11 +16,48 @@ class ModbusClientWrapper:
         )
         # Подключение к устройству
         self.client.connect()
+        self.last_command = None  # Для хранения последней отправленной команды
 
     def __del__(self):
         # Закрытие соединения при удалении объекта
         if hasattr(self, 'client') and self.client:
             self.client.close()
+
+    def send_command(self, command, *args, **kwargs):
+        """Отправка команды с проверкой на эхо."""
+        # Сохраняем последнюю команду
+        self.last_command = (command, args, kwargs)
+
+        # Отправляем команду
+        response = command(*args, **kwargs)
+
+        # Проверяем, не является ли ответ эхом (дублированием последней команды)
+        if self.is_echo(response):
+            print("Обнаружено эхо. Игнорируем ответ.")
+            return None
+
+        return response
+
+    def is_echo(self, response):
+        """Проверка, является ли ответ эхом последней команды."""
+        if self.last_command is None:
+            return False
+
+        # Пример логики для проверки эха:
+        # Если ответ содержит те же данные, что и последняя команда, это эхо
+        command, args, kwargs = self.last_command
+        if isinstance(response, (ModbusIOException, ExceptionResponse)):
+            return False  # Ошибки не считаем эхом
+
+        # Пример: сравниваем данные ответа с данными команды
+        if hasattr(response, 'registers'):
+            # Для чтения регистров
+            return response.registers == kwargs.get('value', args[1] if len(args) > 1 else None)
+        elif hasattr(response, 'value'):
+            # Для записи регистров
+            return response.value == kwargs.get('value', args[1] if len(args) > 1 else None)
+
+        return False
 
     def find_devices(self):
         """Поиск всех устройств на шине Modbus."""
@@ -27,8 +65,15 @@ class ModbusClientWrapper:
         for slave_id in range(1, 20):  # Адреса устройств от 1 до 247
             try:
                 # Попытка чтения holding регистра для проверки наличия устройства
-                response = self.client.read_holding_registers(address=0, count=1, slave=slave_id)
-                if not isinstance(response, ModbusIOException):
+                response = self.send_command(
+                    self.client.read_holding_registers,
+                    address=0,
+                    count=1,
+                    slave=slave_id
+                )
+                if response is None:  # Пропустить эхо
+                    continue
+                if not isinstance(response, (ModbusIOException, ExceptionResponse)):
                     devices.append(slave_id)
             except Exception as e:
                 print(f"Ошибка при поиске устройства {slave_id}: {e}")
@@ -37,18 +82,24 @@ class ModbusClientWrapper:
     def change_device_id(self, current_id, new_id):
         """Изменение ID устройства."""
         # Предполагаем, что команда для изменения ID устройства записывается в регистр 0x0110
-        response = self.client.write_register(address=0x0110, value=new_id, slave=current_id)
-        if isinstance(response, ModbusIOException):
+        response = self.send_command(
+            self.client.write_register,
+            address=0x0110,
+            value=new_id,
+            slave=current_id
+        )
+        if response is None:  # Пропустить эхо
+            return False
+        if isinstance(response, (ModbusIOException, ExceptionResponse)):
             print(f"Modbus IO Error: {response}")
             return False
         return True
 
 
-# Основной код программы надо проверить на УЬ
+# Основной код программы
 if __name__ == "__main__":
     # Инициализация Modbus-клиента
-    modbus_client = ModbusClientWrapper(port='COM10',
-                                        baudrate=9600)  # Укажите правильный порт (например, COM3 для Windows)
+    modbus_client = ModbusClientWrapper(port='COM10', baudrate=9600)  # Укажите правильный порт
 
     # Поиск устройств на шине
     print("Поиск устройств...")
